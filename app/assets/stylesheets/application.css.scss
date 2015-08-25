@@ -1,0 +1,274 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'normalize';
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.button {
+	outline: none;
+	background: #EFDD29;
+	border: 1px solid #EFDD29;
+	padding: .5em 1.5em;
+	border-radius: 0.75em;
+	color: #000000;
+	opacity: 0.75;
+	&:hover {
+		border: 1px solid #EFDD29;
+		opacity: 1;
+	}
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#header {
+	padding: 1em 3em;
+	border-bottom: 0px solid #EFDD29;
+	background: #000000;
+	color: #9eafba;
+	p {
+		display: inline;
+	}
+
+	.buttons {
+		float: right;
+		margin-top: -1px;
+		.button {
+			font-size: .8em;
+			margin-left: .5em;
+		}
+	}
+	#title-logo{
+		/*color:#848484;*/
+		color: #ffffff;
+		font-size: 1.5em;
+		padding-left: 1em;
+	}
+}
+
+
+#main_content {
+
+	padding: 3em 4em;
+
+	#back{
+		font-size: 1.25em;
+		color: #848484;
+	}
+
+	.post_wrapper {
+		padding: 2em 3em;
+		.title {
+			margin: 0;
+			a {
+				font-weight: 500;
+				text-decoration: none;
+				color: #2a2f35;
+				font-size: 1.5em;
+				&:hover {
+					color: #33acb7;
+				}
+			}
+		}
+		.date_and_author {
+			color: #848484;
+			margin: 0.5em 0 0 0;
+		}
+
+		.thumb{
+		border-radius: 2em;
+		}
+
+		.preview_text{
+			font-size: 1em;
+			padding-left: 200px;
+			margin-top: -140px;
+			max-width: 600px;
+		}
+
+		#welcome_message{
+			padding: 1em 3em;
+			border-bottom: 1px solid #d6dce0;
+			font-size: 0.85em;
+			background-color: #f5f7f9;
+		}
+	}
+
+	#post_content {
+		padding: 4em 4em;
+
+		#picture{
+			width: 300px;
+
+			img{
+				max-width:300px;
+				border-radius: 50px;
+			}
+		}
+
+		#report_info{
+			padding-left: 350px;
+			margin-top: -350px;
+
+			.title {
+			font-weight: 500;
+			text-decoration: none;
+			color: #2a2f35;
+			font-size: 2.5em;
+			margin-bottom: 0;
+			display: inline;
+			}
+			.body {
+				font-size: 1.1em;
+				padding-left: 2em;
+				max-width: 600px;
+				/*line-height: 1.75;*/
+
+			}
+			.date_and_author {
+				color: #000000;
+				margin: .5em 0 2em 0;
+			}
+			.options{
+				color: #848484;
+			}
+		}
+
+		#comments {
+			h2 {
+				margin: 3em 0 1em 0;
+				border-bottom: 1px solid #d6dce0;
+				padding-bottom: 0.5em;
+			}
+			h3 {
+				margin-top: 2em;
+			}
+			.comment {
+				border-bottom: 1px solid #d6dce0;
+				padding: 1.5em 2em;
+				.clear_both {
+					clear: both;
+				}
+				&:after {
+					clear: both;
+				}
+				.comment_content {
+					float: left;
+					.comment_name {
+						margin: 1em 0 0 0;
+						font-size: 0.7em;
+						text-transform: uppercase;
+					}
+					.comment_body {
+						font-size: 1.2em;
+						margin: 0.2em 0 0 0;
+					}
+					.comment_time {
+						margin-top: 1.2em;
+						font-size: .8em;
+					}
+				}
+				.button {
+					float: right;
+				}
+			}
+			input[type="text"], textarea {
+				width: 50%;
+			}
+		}
+	}
+	#page_wrapper {
+		padding: 3em;
+		#profile_image {
+			width: 300px;
+			float: left;
+			margin-right: 2em;
+			img {
+				width: 100%;
+				border-radius: 0.35em;
+			}
+		}
+		#content {
+			h1 {
+				font-weight: 500;
+			}
+			p {
+				font-size: 1.1em;
+				line-height: 1.75;
+			}
+			a {
+				color: #33acb7;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+	.links {
+		margin: 2em 0;
+	}
+	input[type="text"], input[type="email"], input[type="password"], textarea {
+		width: 90%;
+		border: 1px solid #d6dce0;
+		border-radius: .35em;
+		margin-top: 10px;
+		padding: .5em 1em;
+		line-height: 1.75;
+	}
+	input[type="text"] {
+		height: 35px;
+	}
+	textarea {
+		min-height: 180px;
+	}
+	input[type="submit"] {
+		outline: none;
+		background: transparent;
+		border: 1px solid #d6dce0;
+		padding: .5em 1.5em;
+		font-size: 1.1em;
+		border-radius: 1.5em;
+		margin-left: .5em;
+		&:hover {
+			border: 1px solid #33acb7;
+			color: #33acb7;
+		}
+	}
+
+	#errors{
+		ul{
+			li{
+				color: #8B0000;
+			}
+		}
+	}
+}

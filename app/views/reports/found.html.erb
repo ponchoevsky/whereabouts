@@ -1,0 +1,30 @@
+<h1>Ellos han regresaso a casa…</h1>
+
+<% @reports.each do |report| %>
+
+	<% if report.found %>
+
+		<div class="post_wrapper">
+
+			<%= link_to( image_tag(report.image.url(:thumb), :class => "thumb"), report) %>
+
+			<div class="preview_text">
+
+				<h2 class="title"> <%= link_to report.name, report %> </h2>
+
+				<label class="date_and_author">Reportada el día <%= report.created_at.strftime("%B, %d, %Y") %></label>
+
+				<p>
+					<%= report.details[0,70] %>
+					<% if report.details.length > 70 %>
+						(...)
+					<% end %>
+				</p>
+
+			</div>
+
+		</div>
+
+	<% end %>
+
+<% end %>

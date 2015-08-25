@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whereabouts</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div id="header">
+		<p id="title-logo"> <%= link_to "Whereabouts", root_path %></p>
+
+		<div class="buttons">
+			<button class="button"><%= link_to "Reportar", new_report_path %></button>
+			<button class="button">Cerrar Sesión</button>
+		</div>
+</div>
+	
+
+<div id="main_content">
+	<%= yield %>
+</div>
+
+</body>
+</html>

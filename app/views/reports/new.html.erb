@@ -1,0 +1,47 @@
+<h1>Nuevo Reporte</h1>
+
+	<%= form_for :report, url: reports_path, html: {multipart: true} do |f| %>
+		
+		<% if @report.errors.any?	%>
+			<div id="errors">
+				<h3>Woops! Algo salió mal.</h3>
+				<ul>
+					<% @report.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+				<br>
+			</div>
+		<% end %>
+
+		<p>
+			Nombre de la mascota<br>
+			<%= f.text_field :name %>
+		</p>
+
+		<p>
+			Ciudad<br>
+			<%= f.text_field :city %>
+		</p>
+
+		<p>
+			Detalles<br>
+			<%= f.text_area :details %>
+		</p>
+
+		<p>
+			Imagen
+			<%= f.file_field :image %>
+
+			Fecha de desaparición
+			<%= f.date_select :since, :order => [:day, :month, :year] %><br><br>
+		</p>
+
+		<p>
+			<%= f.hidden_field :found, :value => false %>
+		</p>
+
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
