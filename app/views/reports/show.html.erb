@@ -1,33 +1,38 @@
-<div id="post_content">
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-md-4">
+			<%= image_tag @report.image.url(:medium) %>
+			<p><%= link_to("← Regresar", reports_path, :id => "back") %></p>
 
-	<%= image_tag @report.image.url(:medium) %>
-	<p><%= link_to("← Regresar", reports_path, :id => "back") %></p>
-
-	<div id="report_info">
-		<h1 class="title">
-			<%= @report.name %>
-		</h1>
-		
-		<%= link_to("✎ Editar", edit_report_path(@report), :class => "options") %>
-		—
-		<%= link_to("✕ Eliminar", report_path(@report), method: :delete, data: {confirm: "¿Estás seguro?"}, :class => "options") %>
-		—
-		<%= link_to("✓ Encontrado", report_path(@report, "report[found]" => !@report.found), :method => :put, :class => "options") %>
-		 
-
-		<p class="date_and_author">
-			Se perdió el día: <b><%= @report.since %></b>.<br>
-			En <%= @report.city %>
-			<% if @report.found %>
-				<br><b>¡Y ya regresó a casa!</b>
-			<% end %>
-		</p>
-
-		<h2>Detalles del reporte:</h2>
-
-		<p class="body">
-			<%= @report.details %>
-		</p>
+			<div class="table-responsive">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>
+								<h1><%= @report.name %></h1>
+								<% if user_signed_in? %>
+									<%= render 'layouts/options' %>
+								<% end %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Se perdió el día: <b><%= @report.since %></b>.<br>
+								En <%= @report.city %>
+							</td>
+								<% if @report.found %>
+									<td><br><b>¡Y ya regresó a casa!</b></td>
+								<% end %>
+						</tr>
+						<tr>
+							<td>
+								<h3>Detalles del reporte:</h3>
+								<p>	<%= @report.details %> </p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
-
-</div>
+</div>		 

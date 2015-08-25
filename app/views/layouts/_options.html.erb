@@ -1,0 +1,5 @@
+<%= link_to("✎ Editar", edit_report_path(@report), :class => "options") %>
+—
+<%= link_to("✕ Eliminar", report_path(@report), method: :delete, data: {confirm: "¿Estás seguro?"}, :class => "options") %>
+—
+<%= link_to("✓ Encontrado", report_path(@report, "report[found]" => !@report.found), :method => :put, :class => "options") %>

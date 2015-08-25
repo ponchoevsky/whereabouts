@@ -15,7 +15,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'normalize';
+
+body {
+	background: #96C0CE;
+}
+/*@import 'normalize';
 
 html, body {
 	font-family: 'Raleway', sans-serif;
@@ -70,7 +74,7 @@ a {
 		}
 	}
 	#title-logo{
-		/*color:#848484;*/
+		/*color:#848484;*/ /*
 		color: #ffffff;
 		font-size: 1.5em;
 		padding-left: 1em;
@@ -107,7 +111,7 @@ a {
 		}
 
 		.thumb{
-		border-radius: 2em;
+		border-radius: 5em;
 		}
 
 		.preview_text{
@@ -153,7 +157,7 @@ a {
 				font-size: 1.1em;
 				padding-left: 2em;
 				max-width: 600px;
-				/*line-height: 1.75;*/
+				/*line-height: 1.75;*/ /*
 
 			}
 			.date_and_author {
@@ -272,4 +276,4 @@ a {
 			}
 		}
 	}
-}
+}*/
