@@ -1,17 +1,19 @@
 class ReportsController < ApplicationController
 
+	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@reports = Report.all.order("created_at DESC")
 	end
 
 
 	def new
-		@report = Report.new
+		@report = current_user.reports.build
 	end
 
 
 	def create
-		@report = Report.new(report_params)
+		@report = current_user.reports.build(report_params)
 		if @report.save
 			redirect_to @report
 		else
