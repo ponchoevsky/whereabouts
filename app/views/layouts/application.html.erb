@@ -9,20 +9,12 @@
 </head>
 <body>
 
+	<%= render 'layouts/header' %>
 
-<div id="header">
-		<p id="title-logo"> <%= link_to "Whereabouts", root_path %></p>
 
-		<div class="buttons">
-			<button class="button"><%= link_to "Reportar", new_report_path %></button>
-			<button class="button">Cerrar Sesión</button>
-		</div>
-</div>
-	
-
-<div id="main_content">
-	<%= yield %>
-</div>
+	<div id="main_content">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
