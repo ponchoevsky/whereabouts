@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   get 'reports/found'
-  resources :reports, :comments
+
+  devise_for :users
+  
+  resources :reports do
+  	resources :comments, except: [:show, :index]
+  end
+  
   root "reports#index"
 end

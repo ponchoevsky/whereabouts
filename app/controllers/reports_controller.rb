@@ -24,6 +24,7 @@ class ReportsController < ApplicationController
 
 	def show
 		@report = Report.find(params[:id])
+		@comments = Comment.where(report_id: @report.id).order("created_at DESC")
 	end
 
 

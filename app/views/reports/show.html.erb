@@ -3,8 +3,6 @@
 		<div class="col-md-3">
 			<%= image_tag @report.image.url(:medium) %><br><br>
 			<p><%= link_to("← Regresar", reports_path, :id => "back") %></p>
-
-			
 		</div>
 
 		<div class="col-md-7 col-md-offset-1">
@@ -34,9 +32,33 @@
 								<p>	<%= @report.details %> </p>
 							</td>
 						</tr>
+						<tr>
+							<td></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
+			
+
+			<h2>Commentarios:</h2><br>
+			<% if @comments.blank? %>
+          		<p>Aún no hay comentarios acerca de este reporte.</p>
+			<% else %>
+				<% @comments.each do |comment| %>
+					<div class="reviews">
+						<p>Escrito por <b><%= comment.user.email %></b>. Hace <%= time_ago_in_words(comment.created_at) %>.<br>
+							<%= comment.body %></p>
+						<hr>
+					</div>
+				<% end %>
+          	<% end %>
+
+
+          	<%= form_for [@report, Comment.new] do |f| %>
+				<div class="field"><%= f.text_area :body %></div>
+     			<div class="action"><%= f.submit %></div>
+			<% end %>
+
 		</div>
 	</div>
 </div>		 
