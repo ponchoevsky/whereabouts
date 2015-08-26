@@ -1,9 +1,20 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Ayúdalos a regresar a casa.</h1>
+    <p><b>Whereabouts</b> es un espacio dedicado a las mascotas que no encuentran su camino de vuelta a casa.
+		Puedes reportar extravíos y navegar entre los reportes de otros usuarios.
+		Si cuentas con información acerca de alguno de los casos, contacta al dueño.
+	</p>
+    <p><%= link_to "Regístrate para comenzar", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
 <div class="row">
   <% @reports.each do |report| %>
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-4 col-md-3">
       <div class="thumbnail">
         <%= link_to( image_tag(report.image.url(:medium), :class => "image"), report) %>
-        <center><h3 style="display: inline"><%=report.name%></h3> (<%= report.city %>)</center>
+        <p><center><h3 style="display: inline"><%=report.name%></h3> (<%= report.city %>)</center></p>
       </div>
     </div>
   <% end %>

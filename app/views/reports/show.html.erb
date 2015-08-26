@@ -1,14 +1,18 @@
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div class="col-md-4">
-			<%= image_tag @report.image.url(:medium) %>
+		<div class="col-md-3">
+			<%= image_tag @report.image.url(:medium) %><br><br>
 			<p><%= link_to("← Regresar", reports_path, :id => "back") %></p>
 
+			
+		</div>
+
+		<div class="col-md-7 col-md-offset-1">
 			<div class="table-responsive">
 				<table class="table">
 					<tbody>
 						<tr>
-							<td>
+							<td style="border: 0px">
 								<h1><%= @report.name %></h1>
 								<% if user_signed_in? %>
 									<%= render 'layouts/options' %>
