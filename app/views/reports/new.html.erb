@@ -1,47 +1,55 @@
-<h1>Nuevo Reporte</h1>
+<div class="panel panel-default">
+	<div class="form-wrapper">
 
-	<%= form_for :report, url: reports_path, html: {multipart: true} do |f| %>
-		
-		<% if @report.errors.any?	%>
-			<div id="errors">
-				<h3>Woops! Algo salió mal.</h3>
-				<ul>
-					<% @report.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-					<% end %>
-				</ul>
-				<br>
-			</div>
-		<% end %>
+		<h1>Nuevo Reporte</h1><br>
 
-		<p>
-			Nombre de la mascota<br>
-			<%= f.text_field :name %>
-		</p>
+			<%= form_for :report, url: reports_path, html: {multipart: true} do |f| %>
+				
+				<% if @report.errors.any?	%>
+					<div id="errors">
+						<h3>Woops! Algo salió mal.</h3>
+						<ul>
+							<% @report.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+						</ul>
+						<br>
+					</div>
+				<% end %>
 
-		<p>
-			Ciudad<br>
-			<%= f.text_field :city %>
-		</p>
+				<p>
+					<b>Nombre de la mascota</b><br>
+					<%= f.text_field :name %>
+				</p>
 
-		<p>
-			Detalles<br>
-			<%= f.text_area :details %>
-		</p>
+				<p>
+					<b>Ciudad</b><br>
+					<%= f.text_field :city %>
+				</p>
 
-		<p>
-			Imagen
-			<%= f.file_field :image %>
+				<p>
+					<b>Detalles</b><br>
+					<%= f.text_area :details %>
+				</p>
 
-			Fecha de desaparición
-			<%= f.date_select :since, :order => [:day, :month, :year] %><br><br>
-		</p>
+				<p>
+					<b>Imagen</b><br>
+					<%= f.file_field :image %>
+				</p><br>
 
-		<p>
-			<%= f.hidden_field :found, :value => false %>
-		</p>
+				<p>
+					<b>Fecha de desaparición</b><br>
+					<%= f.date_select :since, :order => [:day, :month, :year] %><br><br>
+				</p>
 
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
+				<p>
+					<%= f.hidden_field :found, :value => false %>
+				</p>
+
+				<p>
+					<%= f.submit "Reportar", :class => "btn btn-primary" %>
+				</p>
+			<% end %>
+
+	</div>
+</div>

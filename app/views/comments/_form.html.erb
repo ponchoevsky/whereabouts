@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+	<p> <h4>Escribe un comentario</h4>
+        <%= form_for [@report, @comment] do |f| %>
+        	<% if @comment.errors.any?	%>
+				<div id="errors">
+					<h3>Woops! Algo salió mal.</h3>
+					<ul>
+						<% @comment.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+					<br>
+				</div>
+			<% end %>
+			<div class="field"><%= f.text_area :body %></div>
+			<div class="action"><%= f.submit "Agregar Comentario", :class => "btn btn-primary" %></div>
+		<% end %>
+	</p>
+<% end %>

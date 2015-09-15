@@ -10,10 +10,17 @@ class CommentsController < ApplicationController
 		@comment.report_id = @report.id
 
 		if @comment.save
-			redirect_to @report, notice: 'Comment was successfully created.'
+			redirect_to @report
 		else
-			render "new"
+			redirect_to @report, notice: 'Los comentarios no pueden ir en blanco.'
 		end
+	end
+
+
+	def destroy
+		@comment = @report.comments.find(params[:id])
+		@comment.destroy
+		redirect_to :back
 	end
 
 
