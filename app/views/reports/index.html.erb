@@ -9,6 +9,12 @@
   </div>
 <% end %>
 
+
+
+<%# render 'layouts/filters' %>
+
+
+
 <div class="row">
   <% @reports.each do |report| %>
     <div class="col-sm-4 col-md-3">
@@ -19,3 +25,5 @@
     </div>
   <% end %>
 </div>
+
+<%= will_paginate @reports, renderer: BootstrapPagination::Rails, previous_label: "Recientes", next_label: "Anteriores", inner_window: 1, outer_window: 0 %>

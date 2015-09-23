@@ -2,8 +2,17 @@ class ReportsController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show]
 
+	def search
+		if params[:search].present?
+			@reports = Report.search(params[:search])
+		else
+			@reports = Report.all
+		end		
+	end
+
+
 	def index
-		@reports = Report.all.order("created_at DESC")
+		@reports = Report.all.order("created_at DESC").paginate(page: params[:page], per_page: 20)
 	end
 
 
