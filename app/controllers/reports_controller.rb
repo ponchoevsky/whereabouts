@@ -61,7 +61,7 @@ class ReportsController < ApplicationController
 
 
 	def found
-		@reports = Report.all.order("created_at DESC")
+		@reports = Report.where(found: true).order("created_at DESC").paginate(page: params[:page], per_page: 20)
 	end
 
 	private

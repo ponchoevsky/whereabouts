@@ -15,7 +15,7 @@
 								<% if user_signed_in? %>
 									<%= render 'layouts/options' %>
 								<% else %>
-									Reportado por <b><%= @report.user.email %></b>
+									Reportado por <b><%= @report.user.username %></b>
 								<% end %>
 							</td>
 						</tr>
@@ -23,10 +23,10 @@
 							<td>
 								Se perdió el día: <b><%= @report.since %></b>.<br>
 								En <%= @report.city %>
-							</td>
 								<% if @report.found %>
 									<td><br><b>¡Y ya regresó a casa!</b></td>
 								<% end %>
+							</td>
 						</tr>
 						<tr>
 							<td>
