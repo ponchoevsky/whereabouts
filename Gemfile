@@ -24,6 +24,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'searchkick', '~> 0.9.1'
+gem 'bonsai-elasticsearch-rails'
 
 gem 'puma'
 

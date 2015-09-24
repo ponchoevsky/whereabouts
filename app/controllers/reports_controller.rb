@@ -2,13 +2,13 @@ class ReportsController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show]
 
-	def search
-		if params[:search].present?
-			@reports = Report.search(params[:search])
-		else
-			@reports = Report.all
-		end		
-	end
+	#def search
+	#	if params[:search].present?
+	#		@reports = Report.search(params[:search])
+	#	else
+	#		@reports = Report.all
+	#	end		
+	#end
 
 
 	def index
