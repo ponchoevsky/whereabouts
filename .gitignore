@@ -11,4 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
-/public/system/reports/images
+/public/system/reports/images.env
